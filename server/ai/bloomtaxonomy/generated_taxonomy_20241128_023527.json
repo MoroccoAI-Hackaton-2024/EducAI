@@ -1,0 +1,248 @@
+{
+  "Remember": [
+    {
+      "id": "R1",
+      "type": "multiple-choice",
+      "question": "What is an example of a mechanical wave?",
+      "options": [
+        "Light wave",
+        "Seismic wave",
+        "Sound wave",
+        "Electromagnetic wave"
+      ],
+      "answer": "Sound wave"
+    },
+    {
+      "id": "R2",
+      "type": "short-answer",
+      "question": "Define the term 'velocity' in the context of wave propagation."
+    },
+    {
+      "id": "R3",
+      "type": "multiple-choice",
+      "question": "Which type of wave requires a physical medium to propagate?",
+      "options": [
+        "Electromagnetic wave",
+        "Mechanical wave",
+        "Light wave",
+        "Seismic wave"
+      ],
+      "answer": "Mechanical wave"
+    },
+    {
+      "id": "R4",
+      "type": "short-answer",
+      "question": "What is the formula to calculate the velocity of a wave?"
+    },
+    {
+      "id": "R5",
+      "type": "multiple-choice",
+      "question": "What is the unit of measurement for the frequency of a wave?",
+      "options": [
+        "Hertz (Hz)",
+        "Meter per second (m/s)",
+        "Second (s)",
+        "Meter (m)"
+      ],
+      "answer": "Hertz (Hz)"
+    }
+  ],
+  "Understand": [
+    {
+      "id": "U1",
+      "type": "short-answer",
+      "question": "Explain the difference between a transverse wave and a longitudinal wave."
+    },
+    {
+      "id": "U2",
+      "type": "multiple-choice",
+      "question": "Which type of wave is characterized by particles vibrating perpendicular to the direction of wave propagation?",
+      "options": [
+        "Transverse wave",
+        "Longitudinal wave",
+        "Electromagnetic wave",
+        "Seismic wave"
+      ],
+      "answer": "Transverse wave"
+    },
+    {
+      "id": "U3",
+      "type": "short-answer",
+      "question": "Describe the relationship between the elasticity of a medium and the velocity of a wave."
+    },
+    {
+      "id": "U4",
+      "type": "multiple-choice",
+      "question": "What is the effect of increasing the distance between two points on the time it takes for a wave to propagate?",
+      "options": [
+        "It decreases",
+        "It remains the same",
+        "It increases",
+        "It becomes zero"
+      ],
+      "answer": "It increases"
+    },
+    {
+      "id": "U5",
+      "type": "short-answer",
+      "question": "Explain why sound waves cannot propagate in a vacuum."
+    }
+  ],
+  "Apply": [
+    {
+      "id": "A1",
+      "type": "essay",
+      "question": "Apply the concept of wave velocity to a real-life scenario, such as a seismograph recording earthquake waves."
+    },
+    {
+      "id": "A2",
+      "type": "multiple-choice",
+      "question": "A wave has a frequency of 50 Hz and a wavelength of 10 m. What is its velocity?",
+      "options": [
+        "500 m/s",
+        "50 m/s",
+        "10 m/s",
+        "5 m/s"
+      ],
+      "answer": "500 m/s"
+    },
+    {
+      "id": "A3",
+      "type": "short-answer",
+      "question": "A sound wave has a velocity of 340 m/s and a frequency of 440 Hz. Calculate its wavelength."
+    },
+    {
+      "id": "A4",
+      "type": "multiple-choice",
+      "question": "Two waves have the same frequency but different velocities. What can be concluded about their wavelengths?",
+      "options": [
+        "They are the same",
+        "They are different",
+        "One is longer than the other",
+        "One is shorter than the other"
+      ],
+      "answer": "They are different"
+    },
+    {
+      "id": "A5",
+      "type": "short-answer",
+      "question": "A wave has a velocity of 200 m/s and a wavelength of 5 m. Calculate its frequency."
+    }
+  ],
+  "Analyze": [
+    {
+      "id": "AN1",
+      "type": "short-answer",
+      "question": "Analyze the difference in wave behavior between a transverse wave and a longitudinal wave."
+    },
+    {
+      "id": "AN2",
+      "type": "multiple-choice",
+      "question": "Which statement best describes the relationship between the frequency and velocity of a wave?",
+      "options": [
+        "Increasing frequency increases velocity",
+        "Increasing frequency decreases velocity",
+        "Frequency is independent of velocity",
+        "Velocity is independent of frequency"
+      ],
+      "answer": "Frequency is independent of velocity"
+    },
+    {
+      "id": "AN3",
+      "type": "short-answer",
+      "question": "Compare and contrast the characteristics of sound waves and seismic waves."
+    },
+    {
+      "id": "AN4",
+      "type": "multiple-choice",
+      "question": "What happens to the velocity of a wave as it passes from one medium to another with a different elasticity?",
+      "options": [
+        "It increases",
+        "It decreases",
+        "It remains the same",
+        "It becomes zero"
+      ],
+      "answer": "It changes"
+    },
+    {
+      "id": "AN5",
+      "type": "short-answer",
+      "question": "Analyze the concept of superposition in the context of wave propagation."
+    }
+  ],
+  "Evaluate": [
+    {
+      "id": "E1",
+      "type": "essay",
+      "question": "Evaluate the importance of understanding wave propagation in real-life scenarios, such as earthquake detection and sound wave analysis."
+    },
+    {
+      "id": "E2",
+      "type": "short-answer",
+      "question": "Justify the use of seismic waves in studying the Earth's interior structure."
+    },
+    {
+      "id": "E3",
+      "type": "multiple-choice",
+      "question": "Which statement best describes the significance of wave velocity in understanding wave propagation?",
+      "options": [
+        "It determines the wavelength",
+        "It determines the frequency",
+        "It determines the amplitude",
+        "It determines the medium's elasticity"
+      ],
+      "answer": "It determines the wavelength"
+    },
+    {
+      "id": "E4",
+      "type": "short-answer",
+      "question": "Evaluate the limitations of using wave velocity to calculate the distance between two points."
+    },
+    {
+      "id": "E5",
+      "type": "multiple-choice",
+      "question": "What is the primary advantage of using wave propagation to study physical phenomena?",
+      "options": [
+        "It is a cost-effective method",
+        "It is a non-invasive method",
+        "It is a fast method",
+        "It is an accurate method"
+      ],
+      "answer": "It is a non-invasive method"
+    }
+  ],
+  "Create": [
+    {
+      "id": "C1",
+      "type": "essay",
+      "question": "Design an experiment to measure the velocity of a sound wave in different mediums, such as air and water."
+    },
+    {
+      "id": "C2",
+      "type": "short-answer",
+      "question": "Propose a new method for using wave propagation to detect and monitor natural disasters, such as earthquakes and hurricanes."
+    },
+    {
+      "id": "C3",
+      "type": "multiple-choice",
+      "question": "What is the primary consideration when designing a system to transmit sound waves over long distances?",
+      "options": [
+        "Amplitude",
+        "Frequency",
+        "Wavelength",
+        "Velocity"
+      ],
+      "answer": "Frequency"
+    },
+    {
+      "id": "C4",
+      "type": "short-answer",
+      "question": "Create a scenario where the concept of wave superposition is applied to a real-life situation, such as sound wave interference."
+    },
+    {
+      "id": "C5",
+      "type": "essay",
+      "question": "Design a device that utilizes wave propagation to detect and analyze seismic waves for earthquake detection and monitoring."
+    }
+  ]
+}
