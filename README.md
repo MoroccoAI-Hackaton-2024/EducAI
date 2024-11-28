@@ -5,6 +5,7 @@
 Khadija
 Ayoub
 Wadie
+Chaimae
 
 ## Project Structure
 
