@@ -107,7 +107,7 @@ BLOOM_QUESTION_GENERATION_PROMPT = os.getenv('PROMPTS', """Based on the topic pr
 }
 
 ### Your Task:
-
+- **GIVE THE JSON FILE DIRECTLY IN YOUR OUTPUT**
 - **Generate** a similar JSON structure with **5 questions** for each Bloom's Taxonomy level.
 - **Ensure** that the questions are **diverse** and **appropriate** for each cognitive level.
 - **Maintain** consistency in formatting and clarity in questions.
