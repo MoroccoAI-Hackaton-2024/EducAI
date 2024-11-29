@@ -1,8 +1,8 @@
 import os
 import sys
-from . import keys
-from . import tokenization 
-from . import config
+import keys
+import tokenization 
+import config
 
 from langchain.document_loaders import TextLoader
 from langchain.indexes import VectorstoreIndexCreator

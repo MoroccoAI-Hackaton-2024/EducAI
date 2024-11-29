@@ -1,10 +1,16 @@
 from fastapi import FastAPI, Query
 from fastapi.staticfiles import StaticFiles
 from starlette.responses import FileResponse
-from . import config
-from . import llm
-from . import keys
+import config
+import llm
+import keys
 import os
+
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.getcwd(), "../..")))
+
 
 app = FastAPI()
 os.environ["OPENAI_API_KEY"] = keys.key
