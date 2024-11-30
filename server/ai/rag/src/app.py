@@ -1,11 +1,11 @@
 import streamlit as st
-from typing import List
 import tempfile
-import keys  # Ensure this module contains your OpenAI API key as `key`
 import os
-from dotenv import load_dotenv
-import llm  # Ensure this module contains the QueryRunner class
 import json
+import string
+from dotenv import load_dotenv
+import keys  # Ensure this module contains your OpenAI API key as `key`
+import llm  # Ensure this module contains the QueryRunner class
 
 # Load environment variables if needed
 load_dotenv()
@@ -36,37 +36,55 @@ if uploaded_file is not None:
         st.text(file_content)
 
     # Define other configuration parameters
-    # You can also make these configurable via Streamlit widgets if needed
     MODEL_NAME = "gpt-3.5-turbo"  # or "gpt-4", etc.
     MAX_TOKENS = 500
     TOP_N_CHUNKS = 3
 
     # Define the query template
-    query = f"""
-    You are an educational design assistant specializing in Bloom's Taxonomy. Your task is to transform a set of input questions into questions aligned with each level of Bloom's Taxonomy (Remember, Understand, Apply, Analyze, Evaluate, and Create). For every input question, generate a question for each level of the taxonomy, ensuring the new questions remain relevant to the topic of the original question. Structure your output as follows:
+    query = """
+    You are an educational design assistant specializing in Bloom's Taxonomy. Your task is to transform a set of input questions into questions aligned with each level of Bloom's Taxonomy: Remember, Understand, Apply, Analyze, Evaluate, and Create.
 
-    Original Question: {{context}}
-    Remember: [Question targeting recall of knowledge]
-    Understand: [Question requiring comprehension]
-    Apply: [Question involving practical application]
-    Analyze: [Question prompting breakdown into components]
-    Evaluate: [Question asking for judgment or critique]
-    Create: [Question requiring synthesis or creation of new ideas]
-    Example:
-    Input Question: What are the causes of climate change?
+    For each input question, generate corresponding questions at each taxonomy level, ensuring they are relevant to the original question's topic.
 
-    Remember: What is climate change, and what are its primary causes?
-    Understand: How do greenhouse gases contribute to climate change?
-    Apply: Can you identify the greenhouse gas emissions in your daily activities?
-    Analyze: What are the key differences between natural and human-induced causes of climate change?
-    Evaluate: How effective are current policies in mitigating climate change?
-    Create: Propose a new strategy to reduce the effects of climate change on urban areas
+    **Your output should be a well-formatted JSON object with a single key "Topic Questions" that maps to an array of question objects. Each question object must include the following keys: "Original Question", "Remember", "Understand", "Apply", "Analyze", "Evaluate", and "Create", with their respective aligned questions as string values.**
+
+    **Ensure the JSON is valid and free from any additional text, code blocks, or formatting. Do not include numeric keys within the array.**
+
+    **Example Output:**
+
+    ```json
+    {
+        "Topic Questions": [
+            {
+                "Original Question": "What is photosynthesis?",
+                "Remember": "Define photosynthesis.",
+                "Understand": "Explain how photosynthesis works.",
+                "Apply": "Describe how photosynthesis affects plant growth.",
+                "Analyze": "Compare photosynthesis and cellular respiration.",
+                "Evaluate": "Assess the importance of photosynthesis in ecosystems.",
+                "Create": "Design an experiment to measure the rate of photosynthesis."
+            },
+            {
+                "Original Question": "How does gravity affect planetary orbits?",
+                "Remember": "What is gravity?",
+                "Understand": "Explain the role of gravity in planetary orbits.",
+                "Apply": "Calculate the gravitational force between Earth and the Moon.",
+                "Analyze": "Compare the effects of gravity on different planetary orbits.",
+                "Evaluate": "Evaluate the impact of gravity on the stability of the solar system.",
+                "Create": "Propose a model to demonstrate gravity's effect on orbiting bodies."
+            }
+        ]
+    }
+    ```
+
+    **Input Questions:**
+
+    ```
+    {{context}}
+    ```
     """
 
     # Initialize the QueryRunner with the uploaded file content
-    # Assuming QueryRunner can accept file content directly. If it only accepts file paths, use a temporary file.
-    # Here, we'll use a temporary file to simulate the original behavior.
-
     with tempfile.NamedTemporaryFile(delete=False, mode='w', encoding='utf-8', suffix=".txt") as tmp_file:
         tmp_file.write(file_content)
         temp_file_path = tmp_file.name
@@ -78,18 +96,67 @@ if uploaded_file is not None:
         # Run the query
         response = query_runner.run_query(query)
 
-        # Check if the response is a JSON-serializable object
-        try:
-            json_response = json.loads(response) if isinstance(response, str) else response
-        except json.JSONDecodeError:
-            st.error("The response from the model is not valid JSON.")
-            st.text(response)
-            json_response = None
+        # **Access Only the 'result' Field**
+        result_str = response.get('result', '')
 
-        if json_response:
-            # Pretty-print the JSON response using Streamlit's JSON viewer
-            st.subheader("Transformed Questions Aligned with Bloom's Taxonomy")
-            st.json(json_response)
+        if result_str:
+            # **Clean the JSON String**
+            # Remove code block markers if present
+            if result_str.startswith("```json") and result_str.endswith("```"):
+                result_str = result_str.replace("```json", "").replace("```", "").strip()
+
+            # Remove any non-printable characters
+            def clean_string(s):
+                printable = set(string.printable)
+                return ''.join(filter(lambda x: x in printable, s))
+
+            result_str = clean_string(result_str)
+
+            # **Parse the JSON**
+            try:
+                json_response = json.loads(result_str)
+            except json.JSONDecodeError as e:
+                st.error(f"JSON decoding failed: {e}")
+                st.write("Please ensure that the input file is correctly formatted.")
+                json_response = None
+
+            # **Process the Parsed JSON**
+            if isinstance(json_response, dict) and "Topic Questions" in json_response:
+                transformed_questions = json_response["Topic Questions"]
+            elif isinstance(json_response, list):
+                transformed_questions = json_response
+            else:
+                st.error("Unexpected JSON structure.")
+                transformed_questions = []
+
+            if transformed_questions:
+                # **Transformed Questions Section**
+                st.subheader("Transformed Questions Aligned with Bloom's Taxonomy")
+
+                # Iterate over each question set and create a button
+                for idx, question_set in enumerate(transformed_questions):
+                    original_question = question_set.get("Original Question", f"Question {idx+1}")
+                    # Truncate the question for the button label if it's too long
+                    button_label = f"Question {idx+1}: {original_question[:50]}..." if len(original_question) > 50 else f"Question {idx+1}: {original_question}"
+
+                    # Create a unique key for each button to avoid Streamlit's duplicate key error
+                    if st.button(button_label, key=f"btn_{idx}"):
+                        # Display the aligned questions when the button is clicked
+                        st.markdown(f"**Original Question:** {original_question}")
+
+                        # Display each level of Bloom's Taxonomy
+                        for level in ["Remember", "Understand", "Apply", "Analyze", "Evaluate", "Create"]:
+                            taxonomy_question = question_set.get(level, "N/A")
+                            st.markdown(f"### {level}")
+                            st.write(taxonomy_question)
+            else:
+                st.error("No transformed questions available to display.")
+        else:
+            st.error("No 'result' field found in the response.")
+
+    except Exception as e:
+        st.error(f"An error occurred: {e}")
+
     finally:
         # Clean up the temporary file
         os.unlink(temp_file_path)
