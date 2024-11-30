@@ -2,10 +2,10 @@ import streamlit as st
 import tempfile
 import os
 import json
-import string
 from dotenv import load_dotenv
 import keys  # Ensure this module contains your OpenAI API key as `key`
 import llm  # Ensure this module contains the QueryRunner class
+import datetime  # For timestamping saved files
 
 # Load environment variables if needed
 load_dotenv()
@@ -13,8 +13,24 @@ load_dotenv()
 # Set OpenAI API Key
 os.environ["OPENAI_API_KEY"] = keys.key
 
+# Initialize Session State for storing answers
+if 'answers' not in st.session_state:
+    st.session_state['answers'] = {}
+    
+# Create two columns
+col1, col2 = st.columns([1,1])
+
+# Place the first logo in the first column
+with col1:
+    st.image("../Images/hackatonai_logo.png", use_container_width=True)
+
+# Place the second logo in the second column
+with col2:
+    st.image("../Images/educai-logo.png", use_container_width=True)
+
+
 # Streamlit App Title
-st.title("Bloom's Taxonomy Question Transformer")
+st.title("Learnify")
 
 # Instructions
 st.write("""
@@ -96,23 +112,16 @@ if uploaded_file is not None:
         # Run the query
         response = query_runner.run_query(query)
 
-        # **Access Only the 'result' Field**
+        # Access Only the 'result' Field
         result_str = response.get('result', '')
 
         if result_str:
-            # **Clean the JSON String**
+            # Clean the JSON String
             # Remove code block markers if present
             if result_str.startswith("```json") and result_str.endswith("```"):
                 result_str = result_str.replace("```json", "").replace("```", "").strip()
 
-            # Remove any non-printable characters
-            def clean_string(s):
-                printable = set(string.printable)
-                return ''.join(filter(lambda x: x in printable, s))
-
-            result_str = clean_string(result_str)
-
-            # **Parse the JSON**
+            # Parse the JSON
             try:
                 json_response = json.loads(result_str)
             except json.JSONDecodeError as e:
@@ -120,46 +129,118 @@ if uploaded_file is not None:
                 st.write("Please ensure that the input file is correctly formatted.")
                 json_response = None
 
-            # **Process the Parsed JSON**
-            if isinstance(json_response, dict) and "Topic Questions" in json_response:
-                transformed_questions = json_response["Topic Questions"]
-            elif isinstance(json_response, list):
-                transformed_questions = json_response
-            else:
-                st.error("Unexpected JSON structure.")
-                transformed_questions = []
+            # Display Raw JSON
+            if json_response:
+                with st.expander("📄 View Raw JSON Output"):
+                    st.json(json_response)
 
-            if transformed_questions:
-                # **Transformed Questions Section**
-                st.subheader("Transformed Questions Aligned with Bloom's Taxonomy")
+                # Process the Parsed JSON
+                if isinstance(json_response, dict) and "Topic Questions" in json_response:
+                    transformed_questions = json_response["Topic Questions"]
+                elif isinstance(json_response, list):
+                    transformed_questions = json_response
+                else:
+                    st.error("Unexpected JSON structure.")
+                    transformed_questions = []
 
-                # Iterate over each question set and create a button
-                for idx, question_set in enumerate(transformed_questions):
-                    original_question = question_set.get("Original Question", f"Question {idx+1}")
-                    # Truncate the question for the button label if it's too long
-                    button_label = f"Question {idx+1}: {original_question[:50]}..." if len(original_question) > 50 else f"Question {idx+1}: {original_question}"
+                if transformed_questions:
+                    # Transformed Questions Section
+                    st.subheader("Transformed Questions Aligned with Bloom's Taxonomy")
 
-                    # Create a unique key for each button to avoid Streamlit's duplicate key error
-                    if st.button(button_label, key=f"btn_{idx}"):
-                        # Display the aligned questions when the button is clicked
-                        st.markdown(f"**Original Question:** {original_question}")
+                    # Create a form for the answers
+                    with st.form(key='answer_form'):
+                        # Iterate over each question set and display taxonomy-aligned questions with answer fields
+                        for idx, question_set in enumerate(transformed_questions):
+                            original_question = question_set.get("Original Question", f"Question {idx+1}")
 
-                        # Display each level of Bloom's Taxonomy
-                        for level in ["Remember", "Understand", "Apply", "Analyze", "Evaluate", "Create"]:
-                            taxonomy_question = question_set.get(level, "N/A")
-                            st.markdown(f"### {level}")
-                            st.write(taxonomy_question)
-            else:
-                st.error("No transformed questions available to display.")
-        else:
-            st.error("No 'result' field found in the response.")
+                            # Display Original Question
+                            st.markdown(f"**Original Question {idx+1}:** {original_question}")
+
+                            # Iterate over each taxonomy level and display the question with a text area for answers
+                            for level in ["Remember", "Understand", "Apply", "Analyze", "Evaluate", "Create"]:
+                                taxonomy_question = question_set.get(level, "N/A")
+                                answer_field = f"{level} Answer_{idx}"  # Unique key per question and level
+
+                                st.markdown(f"### {level}")
+                                st.write(taxonomy_question)
+
+                                # Display the text area for the student's answer
+                                # Pre-fill with existing answer if available
+                                if st.session_state['answers'].get(answer_field):
+                                    default_value = st.session_state['answers'][answer_field]
+                                else:
+                                    default_value = ""
+
+                                answer = st.text_area(
+                                    label=f"Your Answer for {level}:",
+                                    value=default_value,
+                                    key=answer_field,
+                                    height=100
+                                )
+
+                                # Update the session state with the new answer
+                                st.session_state['answers'][answer_field] = answer
+
+                            # Add a horizontal line to separate different questions
+                            st.markdown("---")
+
+                        # Submit Button
+                        submit_button = st.form_submit_button(label='Submit Your Answers')
+
+                    if submit_button:
+                        # Collect all answers from session state
+                        student_answers = {"Topic Questions": []}
+
+                        for idx, question_set in enumerate(transformed_questions):
+                            original_question = question_set.get("Original Question", f"Question {idx+1}")
+                            answer_set = {
+                                "Original Question": original_question,
+                                "Sub-Questions": {}
+                            }
+
+                            for level in ["Remember", "Understand", "Apply", "Analyze", "Evaluate", "Create"]:
+                                taxonomy_question = question_set.get(level, "N/A")
+                                answer_field = f"{level} Answer_{idx}"  # Unique key per question and level
+                                student_answer = st.session_state['answers'].get(answer_field, "")
+
+                                answer_set["Sub-Questions"][level] = {
+                                    "Question": taxonomy_question,
+                                    "Answer": student_answer
+                                }
+
+                            student_answers["Topic Questions"].append(answer_set)
+
+                        # Timestamp for unique filename
+                        timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+                        answers_file_path = os.path.join(os.getcwd(), f"student_answers_{timestamp}.json")
+
+                        try:
+                            # Save the JSON file locally
+                            with open(answers_file_path, 'w', encoding='utf-8') as f:
+                                json.dump(student_answers, f, ensure_ascii=False, indent=4)
+
+                            # Optional: Provide a download button for the JSON file
+                            json_str = json.dumps(student_answers, ensure_ascii=False, indent=4)
+                            st.download_button(
+                                label="📥 Download Your Answers",
+                                data=json_str,
+                                file_name=f'student_answers_{timestamp}.json',
+                                mime='application/json'
+                            )
+
+                            # Display success message
+                            st.success("✅ Your answers are submitted!!")
+
+                        except Exception as e:
+                            st.error(f"Failed to save answers: {e}")
 
     except Exception as e:
         st.error(f"An error occurred: {e}")
 
     finally:
         # Clean up the temporary file
-        os.unlink(temp_file_path)
+        if os.path.exists(temp_file_path):
+            os.unlink(temp_file_path)
 else:
     st.info("Please upload a `.txt` file to get started.")
 
