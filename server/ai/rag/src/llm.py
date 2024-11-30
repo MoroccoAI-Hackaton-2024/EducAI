@@ -1,8 +1,8 @@
 import os
 import sys
-from . import keys
-from . import tokenization 
-from . import config
+import keys
+import tokenization 
+import config
 
 from langchain.document_loaders import TextLoader
 from langchain.indexes import VectorstoreIndexCreator
@@ -60,7 +60,6 @@ class QueryRunner:
         document_manager.load_document()
         document_manager.split_text()
         
-
         chunk_store = ChunkStore(document_manager.chunks)
         chunk_store.store_chunks()
 

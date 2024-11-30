@@ -1,7 +1,7 @@
 import openai 
 import tiktoken
 import os 
-from . import config
+import config
 
 
 ## ------------------Chunking the Document --------------###
