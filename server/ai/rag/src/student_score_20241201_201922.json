@@ -1,0 +1,112 @@
+{
+    "Bloom Taxonomy": {
+        "Remember": [
+            {
+                "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+                "Sub-Question": {
+                    "Question": "What is the definition of a mechanical wave?",
+                    "Answer": "A mechanical wave is a disturbance that propagates through a material medium (solid, liquid, or gas) due to the oscillation of particles within the medium, transferring energy from one location to another without transporting matter.\n\n",
+                    "score": 5
+                }
+            },
+            {
+                "Original Question": "Expliquez la différence entre une onde transversale et une onde longitudinale avec un exemple pour chacune.",
+                "Sub-Question": {
+                    "Question": "Recall the definitions of transverse and longitudinal waves.",
+                    "Answer": "",
+                    "score": 0
+                }
+            }
+        ],
+        "Understand": [
+            {
+                "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+                "Sub-Question": {
+                    "Question": "Explain the concept of a mechanical wave in your own words.",
+                    "Answer": "A mechanical wave occurs when particles in a medium vibrate and pass on their energy to neighboring particles. This creates a ripple effect where the disturbance moves through the medium, like ripples spreading out when you throw a stone into water.\n\n",
+                    "score": 5
+                }
+            },
+            {
+                "Original Question": "Expliquez la différence entre une onde transversale et une onde longitudinale avec un exemple pour chacune.",
+                "Sub-Question": {
+                    "Question": "Discuss the differences between transverse and longitudinal waves using examples.",
+                    "Answer": "",
+                    "score": 0
+                }
+            }
+        ],
+        "Apply": [
+            {
+                "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+                "Sub-Question": {
+                    "Question": "How would you identify a mechanical wave in a given scenario?",
+                    "Answer": "I would look for a situation where energy is being transferred through a medium via particle vibrations. For example, if I see sound being transmitted through air or waves moving along a rope when it's shaken, these are mechanical waves because they require a medium to travel.\n",
+                    "score": 4
+                }
+            },
+            {
+                "Original Question": "Expliquez la différence entre une onde transversale et une onde longitudinale avec un exemple pour chacune.",
+                "Sub-Question": {
+                    "Question": "How would you classify a given wave as transverse or longitudinal?",
+                    "Answer": "",
+                    "score": 0
+                }
+            }
+        ],
+        "Analyze": [
+            {
+                "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+                "Sub-Question": {
+                    "Question": "Break down the characteristics that distinguish different types of mechanical waves.",
+                    "Answer": "",
+                    "score": 0
+                }
+            },
+            {
+                "Original Question": "Expliquez la différence entre une onde transversale et une onde longitudinale avec un exemple pour chacune.",
+                "Sub-Question": {
+                    "Question": "Examine the behavior of particles in transverse and longitudinal waves.",
+                    "Answer": "",
+                    "score": 0
+                }
+            }
+        ],
+        "Evaluate": [
+            {
+                "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+                "Sub-Question": {
+                    "Question": "Judge the significance of understanding mechanical waves in various fields of science and engineering.",
+                    "Answer": "",
+                    "score": 0
+                }
+            },
+            {
+                "Original Question": "Expliquez la différence entre une onde transversale et une onde longitudinale avec un exemple pour chacune.",
+                "Sub-Question": {
+                    "Question": "Assess the advantages and disadvantages of transverse and longitudinal waves in practical applications.",
+                    "Answer": "",
+                    "score": 0
+                }
+            }
+        ],
+        "Create": [
+            {
+                "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+                "Sub-Question": {
+                    "Question": "Develop a model to demonstrate the propagation of a mechanical wave.",
+                    "Answer": "",
+                    "score": 0
+                }
+            },
+            {
+                "Original Question": "Expliquez la différence entre une onde transversale et une onde longitudinale avec un exemple pour chacune.",
+                "Sub-Question": {
+                    "Question": "Design an experiment to demonstrate the properties of transverse and longitudinal waves.",
+                    "Answer": "",
+                    "score": 0
+                }
+            }
+        ]
+    }
+}

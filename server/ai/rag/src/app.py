@@ -17,9 +17,54 @@ os.environ["OPENAI_API_KEY"] = keys.key
 # Import prompts from agents.py
 TAXONOMY_AGENT_PROMPT = agents.TAXONOMY_AGENT_PROMPT
 SCORING_AGENT_PROMPT = agents.SCORING_AGENT_PROMPT
-METACOGNITION_AGENT_PROMPT = agents.METACOGNITION_AGENT_PROMPT  # New agent prompt
+METACOGNITION_AGENT_PROMPT = agents.METACOGNITION_AGENT_PROMPT  # Updated agent prompt
 
+# =====================================
+# UI Configuration Variables
+# =====================================
+
+# Colors
+BACKGROUND_COLOR = "#c3c1b4"  # White background
+BUTTON_COLOR = "#F19CBB"      # Blue button color
+TEXT_COLOR = "#000000"        # Black text
+
+# Images
+LOGO_IMAGE_LEFT = "../Images/hackatonai_logo.png"
+LOGO_IMAGE_RIGHT = "../Images/educai-logo.png"
+
+# Texts
+APP_TITLE = "Learnify"
+ANSWERS_SUBMITTED_MESSAGE = "✅ Your answers have been submitted and saved!"
+STUDENT_SCORED_MESSAGE = "✅ The student's performance has been scored!"
+METACOGNITIVE_SUCCESS_MESSAGE = "✅ Metacognitive recommendations generated successfully!"
+
+st.markdown("""
+<style>
+    .stApp {
+        background-color: #fafafa;
+    }
+    h1 {
+        color: #333333;
+    }
+    .stButton>button {
+        color: #ffffff;
+        background-color: #0d6efd;
+        border-radius: 10px;
+        border: 1px solid #0d6efd;
+    }
+    .reportview-container .main .block-container{
+        padding-top: 5rem;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+
+
+# =====================================
 # Initialize Session State for storing answers and JSON data
+# =====================================
 if 'file_content' not in st.session_state:
     st.session_state['file_content'] = None
 if 'answers' not in st.session_state:
@@ -40,26 +85,32 @@ if 'scored_data' not in st.session_state:
     st.session_state['scored_data'] = None
 if 'scored_filename' not in st.session_state:
     st.session_state['scored_filename'] = None
-if 'scoring_done' not in st.session_state:
-    st.session_state['scoring_done'] = False
 if 'weights' not in st.session_state:
     st.session_state['weights'] = {}
 if 'recommendations' not in st.session_state:
     st.session_state['recommendations'] = None
-if 'recommendations_done' not in st.session_state:
-    st.session_state['recommendations_done'] = False
+if 'taxonomy_evaluation' not in st.session_state:
+    st.session_state['taxonomy_evaluation'] = None  # New entry for Taxonomy-Based Evaluation
 
 # Define Taxonomy Levels
 taxonomy_levels = ["Remember", "Understand", "Apply", "Analyze", "Evaluate", "Create"]
 
+
 # Streamlit App Title and Logos
 def display_header():
-    col1, col2 = st.columns([1, 1])
+    col1, col2 = st.columns([1, 4])
     with col1:
-        st.image("../Images/hackatonai_logo.png", use_column_width=True)
+        st.image(LOGO_IMAGE_RIGHT, width=100)  # Adjust the width as needed
     with col2:
-        st.image("../Images/educai-logo.png", use_column_width=True)
-    st.title("Learnify")
+        st.markdown("""
+        <h1 style='margin-top: 20px;'>Learnify</h1>
+        <p style='color: #4a4a4a; font-size: 24px;'>Tailored Learning, Empowering Success.</p>
+        """, unsafe_allow_html=True)
+
+st.sidebar.markdown("""
+## Explore
+Navigate through the sections to experience personalized learning.
+""")
 
 # Upload File and Read Content
 def upload_file():
@@ -131,6 +182,8 @@ def display_questions_and_collect_answers():
                 st.markdown(f"**Original Question {idx+1}:** {original_question}")
                 for level in taxonomy_levels:
                     taxonomy_question = question_set.get(level, "N/A")
+                    if taxonomy_question == "N/A":
+                        continue  # Skip if the taxonomy question is not available
                     answer_field = f"{level} Answer_{idx}"
                     st.markdown(f"### {level}")
                     st.write(taxonomy_question)
@@ -160,6 +213,8 @@ def restructure_json():
         original_question = question_set.get("Original Question", f"Question {idx+1}")
         for level in taxonomy_levels:
             taxonomy_question = question_set.get(level, "N/A")
+            if taxonomy_question == "N/A":
+                continue  # Skip if the taxonomy question is not available
             answer_field = f"{level} Answer_{idx}"
             student_answer = st.session_state['answers'].get(answer_field, "")
             sub_question = {
@@ -236,43 +291,106 @@ def run_scoring_agent():
         if os.path.exists(temp_file_path):
             os.unlink(temp_file_path)
 
+# Calculate Taxonomy-Based Evaluation and Store JSON
+def calculate_taxonomy_evaluation():
+    scored_data = st.session_state['scored_data']
+    taxonomy_evaluation = {"Bloom Taxonomy": {}}
+
+    for level in taxonomy_levels:
+        if level in scored_data["Bloom Taxonomy"]:
+            total_score = 0
+            count = 0
+            for sub_question in scored_data["Bloom Taxonomy"][level]:
+                score = sub_question["Sub-Question"].get("score", 0)
+                total_score += score
+                count += 1
+            average_score = total_score / count if count > 0 else 0
+            weight = st.session_state['weights'].get(level, 0)
+            weighted_average = average_score * weight
+            taxonomy_evaluation["Bloom Taxonomy"][level] = {
+                "average_score": average_score,
+                "weight": weight,
+                "weighted_average": weighted_average
+            }
+        else:
+            taxonomy_evaluation["Bloom Taxonomy"][level] = {
+                "average_score": 0,
+                "weight": st.session_state['weights'].get(level, 0),
+                "weighted_average": 0
+            }
+
+    st.session_state['taxonomy_evaluation'] = taxonomy_evaluation
+    return taxonomy_evaluation
+
 # Run LLM Query for Metacognitive Recommendation Agent
 def run_metacognition_agent():
     MODEL_NAME = "gpt-3.5-turbo"  # or "gpt-4", etc.
 
-    # Calculate weighted average scores for each taxonomy level
-    scored_data = st.session_state['scored_data']
-    num_questions = len(scored_data["Bloom Taxonomy"]["Remember"])
-    weighted_scores = {}
+    # Retrieve the Taxonomy-Based Evaluation JSON from session state
+    taxonomy_evaluation = st.session_state.get('taxonomy_evaluation')
 
-    for level in taxonomy_levels:
-        total_score = 0
-        for sub_question in scored_data["Bloom Taxonomy"][level]:
-            score = sub_question["Sub-Question"].get("score", 0)
-            total_score += score
-        average_score = total_score / num_questions if num_questions else 0
-        weight = st.session_state['weights'].get(level, 1/6)
-        weighted_average = average_score * weight
-        weighted_scores[level] = weighted_average
+    if not taxonomy_evaluation:
+        st.error("Taxonomy-Based Evaluation data is missing.")
+        return False
 
-    # Prepare the input JSON
-    input_json = {
-        "Weighted Average Scores": weighted_scores
-    }
+    # Display the taxonomy_evaluation
+    st.markdown("#### Taxonomy-Based Evaluation JSON:")
+    st.json(taxonomy_evaluation)
 
-    input_json_str = json.dumps(input_json, ensure_ascii=False, indent=4)
+    # Convert the taxonomy_evaluation to a JSON string
+    input_json_str = json.dumps(taxonomy_evaluation, ensure_ascii=False, indent=4)
+    print("#############################")
+    print("input_json_str:")
+    print(input_json_str)
+
+    # Display the input_json_str
+    st.markdown("#### Input JSON String:")
+    st.code(input_json_str, language='json')
+
+    # Display the METACOGNITION_AGENT_PROMPT before replacement
+    st.markdown("#### METACOGNITION_AGENT_PROMPT before replacement:")
+    st.code(METACOGNITION_AGENT_PROMPT)
+
+    # Check for the placeholder in the prompt
+    placeholder = "{input_json}"
+    if placeholder in METACOGNITION_AGENT_PROMPT:
+        print("Placeholder '{input_json}' found in METACOGNITION_AGENT_PROMPT")
+    else:
+        print("Placeholder '{input_json}' NOT found in METACOGNITION_AGENT_PROMPT")
+        st.error("Placeholder '{input_json}' not found in METACOGNITION_AGENT_PROMPT.")
+        return False
+
     # Prepare the prompt with the input JSON
-    metacognition_prompt = METACOGNITION_AGENT_PROMPT.replace("{input_json}", input_json_str)
+    # Use .format() method
+    metacognition_prompt = METACOGNITION_AGENT_PROMPT.format(input_json=input_json_str)
+    print("metacognition_prompt:")
+    print(metacognition_prompt)
 
-    # Write the input JSON to a temporary file
-    with tempfile.NamedTemporaryFile(delete=False, mode='w', encoding='utf-8', suffix=".json") as tmp_file:
-        tmp_file.write(input_json_str)
+    # Display the metacognition_prompt
+    st.markdown("#### Metacognition Agent Prompt:")
+    st.code(metacognition_prompt)
+
+    # Write the prompt to a temporary file
+    with tempfile.NamedTemporaryFile(delete=False, mode='w', encoding='utf-8', suffix=".txt") as tmp_file:
+        tmp_file.write(metacognition_prompt)
         temp_file_path = tmp_file.name
 
     try:
+        print(f"Temporary file created at: {temp_file_path}")
+
+        # Initialize QueryRunner with document_path and model_name
         metacognition_agent = llm.QueryRunner(document_path=temp_file_path, model_name=MODEL_NAME)
+
+        # Run the query
         metacognition_response = metacognition_agent.run_query(metacognition_prompt)
         result_str = metacognition_response.get('result', '').strip()
+
+        # Display the agent's response
+        st.markdown("#### Metacognition Agent Response:")
+        st.code(result_str)
+
+        print("Metacognition Agent Response:")
+        print(result_str)
 
         if result_str:
             # Store the recommendations
@@ -284,17 +402,20 @@ def run_metacognition_agent():
 
     except Exception as e:
         st.error(f"An error occurred: {e}")
+        print(f"An error occurred: {e}")
         return False
 
     finally:
         # Clean up the temporary file
         if os.path.exists(temp_file_path):
             os.unlink(temp_file_path)
+            print(f"Temporary file {temp_file_path} deleted.")
 
 # Display Question-Based Evaluation
 def display_question_based_evaluation():
     scored_data = st.session_state['scored_data']
-    num_questions = len(scored_data["Bloom Taxonomy"]["Remember"])
+    levels_present = [level for level in taxonomy_levels if level in scored_data["Bloom Taxonomy"]]
+    num_questions = max(len(scored_data["Bloom Taxonomy"][level]) for level in levels_present) if levels_present else 0
     questions = [f"Question {i+1}" for i in range(num_questions)]
 
     # Let the user select a question
@@ -307,66 +428,86 @@ def display_question_based_evaluation():
     st.markdown(f"### Evaluation for {selected_question}")
     total_weighted_score = 0.0
     for level in taxonomy_levels:
-        sub_question = scored_data["Bloom Taxonomy"][level][idx]
-        score = sub_question["Sub-Question"].get("score", 0)
-        weight = st.session_state['weights'].get(level, 0)
-        adjusted_score = score * weight
-        total_weighted_score += adjusted_score
-        # Display the score using custom HTML bars
-        st.write(f"**{level}**")
-        percentage = int((score / 5.0) * 100)
-        bar_color = "#76c7c0"  # Customize the color
-        bar_html = f"""
-        <div style="background-color: #e0e0e0; border-radius: 5px; width: 100%; height: 20px;">
-            <div style="width: {percentage}%; background-color: {bar_color}; height: 100%; border-radius: 5px;"></div>
-        </div>
-        """
-        st.markdown(bar_html, unsafe_allow_html=True)
-        col1, col2, col3 = st.columns(3)
-        with col1:
-            st.write(f"Score: {score}/5")
-        with col2:
-            st.write(f"Weight: {weight:.2f}")
-        with col3:
-            st.write(f"Weighted Score: {adjusted_score:.2f}")
-        st.markdown("---")
+        if level in scored_data["Bloom Taxonomy"] and idx < len(scored_data["Bloom Taxonomy"][level]):
+            sub_question = scored_data["Bloom Taxonomy"][level][idx]
+            score = sub_question["Sub-Question"].get("score", 0)
+            weight = st.session_state['weights'].get(level, 0)
+            adjusted_score = score * weight
+            total_weighted_score += adjusted_score
+            # Display the score using custom HTML bars
+            st.write(f"**{level}**")
+            percentage = int((score / 5.0) * 100)
+            bar_color = "#76c7c0"  # Customize the color
+            bar_html = f"""
+            <div style="background-color: #e0e0e0; border-radius: 5px; width: 100%; height: 20px;">
+                <div style="width: {percentage}%; background-color: {bar_color}; height: 100%; border-radius: 5px;"></div>
+            </div>
+            """
+            st.markdown(bar_html, unsafe_allow_html=True)
+            col1, col2, col3 = st.columns(3)
+            with col1:
+                st.write(f"Score: {score}/5")
+            with col2:
+                st.write(f"Weight: {weight:.2f}")
+            with col3:
+                st.write(f"Weighted Score: {adjusted_score:.2f}")
+            st.markdown("---")
+        else:
+            st.warning(f"No data for level '{level}' in {selected_question}.")
     st.write(f"**Total Weighted Score for {selected_question}: {total_weighted_score:.2f} out of 5.00**")
 
 # Display Taxonomy-Based Evaluation
 def display_taxonomy_based_evaluation():
     scored_data = st.session_state['scored_data']
-    num_questions = len(scored_data["Bloom Taxonomy"]["Remember"])
+    levels_present = [level for level in taxonomy_levels if level in scored_data["Bloom Taxonomy"]]
+    num_questions = max(len(scored_data["Bloom Taxonomy"][level]) for level in levels_present) if levels_present else 0
 
     st.markdown("### Taxonomy-Based Evaluation")
     total_weighted_score = 0.0
+    taxonomy_evaluation = {"Bloom Taxonomy": {}}
+
     for level in taxonomy_levels:
-        total_score = 0
-        for sub_question in scored_data["Bloom Taxonomy"][level]:
-            score = sub_question["Sub-Question"].get("score", 0)
-            total_score += score
-        average_score = total_score / num_questions if num_questions else 0
-        weight = st.session_state['weights'].get(level, 0)
-        adjusted_score = average_score * weight
-        total_weighted_score += adjusted_score
-        # Display the score using custom HTML bars
-        st.write(f"**{level}**")
-        percentage = int((average_score / 5.0) * 100)
-        bar_color = "#76c7c0"  # Customize the color
-        bar_html = f"""
-        <div style="background-color: #e0e0e0; border-radius: 5px; width: 100%; height: 20px;">
-            <div style="width: {percentage}%; background-color: {bar_color}; height: 100%; border-radius: 5px;"></div>
-        </div>
-        """
-        st.markdown(bar_html, unsafe_allow_html=True)
-        col1, col2, col3 = st.columns(3)
-        with col1:
-            st.write(f"Average Score: {average_score:.2f}/5")
-        with col2:
-            st.write(f"Weight: {weight:.2f}")
-        with col3:
-            st.write(f"Weighted Avg Score: {adjusted_score:.2f}")
-        st.markdown("---")
+        if level in scored_data["Bloom Taxonomy"]:
+            total_score = 0
+            level_questions = scored_data["Bloom Taxonomy"][level]
+            for sub_question in level_questions:
+                score = sub_question["Sub-Question"].get("score", 0)
+                total_score += score
+            average_score = total_score / len(level_questions) if level_questions else 0
+            weight = st.session_state['weights'].get(level, 0)
+            weighted_average = average_score * weight
+            total_weighted_score += weighted_average
+
+            taxonomy_evaluation["Bloom Taxonomy"][level] = {
+                "average_score": average_score,
+                "weight": weight,
+                "weighted_average": weighted_average
+            }
+
+            # Display the score using custom HTML bars
+            st.write(f"**{level}**")
+            percentage = int((average_score / 5.0) * 100)
+            bar_color = "#76c7c0"  # Customize the color
+            bar_html = f"""
+            <div style="background-color: #e0e0e0; border-radius: 5px; width: 100%; height: 20px;">
+                <div style="width: {percentage}%; background-color: {bar_color}; height: 100%; border-radius: 5px;"></div>
+            </div>
+            """
+            st.markdown(bar_html, unsafe_allow_html=True)
+            col1, col2, col3 = st.columns(3)
+            with col1:
+                st.write(f"Average Score: {average_score:.2f}/5")
+            with col2:
+                st.write(f"Weight: {weight:.2f}")
+            with col3:
+                st.write(f"Weighted Avg Score: {weighted_average:.2f}")
+            st.markdown("---")
+        else:
+            st.warning(f"Level '{level}' is missing in scored data.")
     st.write(f"**Total Weighted Average Score: {total_weighted_score:.2f} out of 5.00**")
+
+    # Store the taxonomy evaluation for metacognition
+    st.session_state['taxonomy_evaluation'] = taxonomy_evaluation
 
 # Display Metacognitive Recommendations
 def display_metacognitive_recommendations():
@@ -404,8 +545,8 @@ def main():
 
     # Step 3: Display Questions and Collect Answers
     if not st.session_state['answers_submitted']:
-        display_questions_and_collect_answers()
-        return  # Wait until answers are submitted
+        if not display_questions_and_collect_answers():
+            return  # Wait until answers are submitted
 
     # Step 4: Restructure JSON and Save Files
     if st.session_state['restructured_data'] is None:
@@ -420,7 +561,7 @@ def main():
         st.session_state['original_filename'] = original_filename
 
     # Display success message and options
-    st.success("✅ Your answers have been submitted and saved!")
+    st.success(ANSWERS_SUBMITTED_MESSAGE)
     # Display Download Buttons and JSON View Options
     st.markdown("### Additional Features")
     # Display options
@@ -447,16 +588,17 @@ def main():
 
     # Step 5: Scoring
     st.markdown("### Scoring")
-    if not st.session_state.get('scoring_done', False):
-        score_button = st.button('Score the Student Performance')
-        if score_button:
-            if run_scoring_agent():
-                scored_filename = save_json_file(st.session_state['scored_data'], "student_score")
-                st.session_state['scored_filename'] = scored_filename
-                st.session_state['scoring_done'] = True
-    if st.session_state.get('scoring_done', False):
+    score_button = st.button('Score the Student Performance')
+    if score_button:
+        if run_scoring_agent():
+            scored_filename = save_json_file(st.session_state['scored_data'], "student_score")
+            st.session_state['scored_filename'] = scored_filename
+            st.success(STUDENT_SCORED_MESSAGE)
+            # Calculate taxonomy evaluation
+            calculate_taxonomy_evaluation()
+
+    if st.session_state.get('scored_data'):
         # Display Scored Data
-        st.success("✅ The student's performance has been scored!")
         with st.expander("📊 Display Scored Data"):
             st.json(st.session_state['scored_data'])
         # Download Scored Data
@@ -479,12 +621,12 @@ def main():
 
         # Step 6: Metacognitive Recommendations
         st.markdown("### Metacognitive Recommendations")
-        if not st.session_state.get('recommendations_done', False):
-            recommend_button = st.button('Get Metacognitive Recommendations')
-            if recommend_button:
-                if run_metacognition_agent():
-                    st.session_state['recommendations_done'] = True
-        if st.session_state.get('recommendations_done', False):
+        recommend_button = st.button('Get Metacognitive Recommendations')
+        if recommend_button:
+            if run_metacognition_agent():
+                st.success(METACOGNITIVE_SUCCESS_MESSAGE)
+
+        if st.session_state.get('recommendations'):
             display_metacognitive_recommendations()
 
     # Sidebar Configuration for Weights

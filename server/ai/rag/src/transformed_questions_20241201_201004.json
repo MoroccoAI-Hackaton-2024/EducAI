@@ -1,0 +1,22 @@
+{
+    "Topic Questions": [
+        {
+            "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+            "Remember": "What is the definition of a mechanical wave?",
+            "Understand": "Explain the concept of a mechanical wave in your own words.",
+            "Apply": "How would you identify a mechanical wave in a given scenario?",
+            "Analyze": "Break down the components of a mechanical wave and its characteristics.",
+            "Evaluate": "Judge the importance of understanding mechanical waves in various fields.",
+            "Create": "Develop a model to demonstrate the propagation of a mechanical wave."
+        },
+        {
+            "Original Question": "Expliquez la différence entre une onde transversale et une onde longitudinale avec un exemple pour chacune.",
+            "Remember": "List the differences between a transverse wave and a longitudinal wave.",
+            "Understand": "Describe why transverse waves and longitudinal waves behave differently.",
+            "Apply": "How would you classify a given wave as transverse or longitudinal?",
+            "Analyze": "Examine the effects of medium properties on the behavior of transverse and longitudinal waves.",
+            "Evaluate": "Assess the advantages and disadvantages of transverse and longitudinal waves in practical applications.",
+            "Create": "Design a scenario where both transverse and longitudinal waves interact in a complex manner."
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+### Remember
+- **Current Performance:** The student scored 5 in recalling the definition of a mechanical wave but scored 0 in recalling the formula for wave propagation speed.
+- **Recommendations:**
+  - Encourage the student to create flashcards or mind maps to help memorize important definitions and formulas.
+  - Suggest practicing retrieval exercises where the student recalls definitions and formulas without looking at notes.
+
+### Understand
+- **Current Performance:** The student scored 5 in explaining the concept of a mechanical wave but scored 0 in explaining the relationship between wave speed, frequency, and wavelength.
+- **Recommendations:**
+  - Encourage the student to teach the concept to a peer to deepen their understanding.
+  - Suggest creating concept maps or diagrams to visualize the relationships between wave properties.
+
+### Apply
+- **Current Performance:** The student scored 5 in identifying a mechanical wave scenario but scored 0 in calculating wave propagation speed.
+- **Recommendations:**
+  - Encourage the student to practice applying formulas to calculate wave properties.
+  - Provide real-world examples where calculating wave speed is crucial to enhance practical application skills.
+
+### Analyze
+- **Current Performance:** The student scored 0 in comparing mechanical waves with electromagnetic waves and in breaking down factors affecting wave speed.
+- **Recommendations:**
+  - Encourage the student to create a comparison chart or table to highlight differences between mechanical and electromagnetic waves.
+  - Suggest analyzing case studies or scenarios where different factors impact wave propagation speed.
+
+### Evaluate
+- **Current Performance:** The student scored 0 in judging the significance of understanding mechanical waves and in assessing the importance of determining wave speed accurately.
+- **Recommendations:**
+  - Encourage the student to write reflective essays on the importance of wave properties in various scientific fields.
+  - Provide scenarios where the student needs to evaluate the consequences of inaccurate wave speed measurements.
+
+### Create
+- **Current Performance:** The student scored 0 in developing a model for wave propagation and in designing an experiment to measure wave speed in different materials.
+- **Recommendations:**
+  - Encourage the student to engage in hands-on activities to create physical models of wave propagation.
+  - Provide guidance on designing simple experiments to measure wave speed using everyday materials.

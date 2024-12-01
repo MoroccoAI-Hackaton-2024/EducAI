@@ -1,0 +1,49 @@
+{
+    "Topic Questions": [
+        {
+            "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+            "Remember": "What is the definition of a mechanical wave?",
+            "Understand": "Explain the concept of a mechanical wave in your own words.",
+            "Apply": "How would you identify an example of a mechanical wave in real life?",
+            "Analyze": "Compare and contrast mechanical waves with electromagnetic waves.",
+            "Evaluate": "Judge the importance of understanding mechanical waves in various fields of science and technology.",
+            "Create": "Develop a model to demonstrate the propagation of a mechanical wave."
+        },
+        {
+            "Original Question": "Comment la vitesse de propagation d'une onde est-elle définie dans un milieu ? Utilisez la formule donnée dans vos notes.",
+            "Remember": "Recall the formula used to define the speed of wave propagation in a medium.",
+            "Understand": "Explain the relationship between wave speed, distance, and time in the context of wave propagation.",
+            "Apply": "How would you calculate the speed of a wave if given the distance traveled and the time taken?",
+            "Analyze": "Break down the factors that can affect the speed of wave propagation in different mediums.",
+            "Evaluate": "Assess the significance of understanding wave speed in the design of communication systems.",
+            "Create": "Design an experiment to investigate how different mediums affect the speed of wave propagation."
+        },
+        {
+            "Original Question": "Si une onde sonore nécessite un milieu matériel pour se propager, pourquoi le son ne se propage-t-il pas dans le vide ?",
+            "Remember": "Explain why sound waves cannot propagate in a vacuum.",
+            "Understand": "Describe the role of a material medium in the transmission of sound waves.",
+            "Apply": "How would you demonstrate the absence of sound propagation in a vacuum?",
+            "Analyze": "Analyze the differences in wave behavior between sound waves in a medium and in a vacuum.",
+            "Evaluate": "Evaluate the implications of sound wave behavior in different environments on human communication.",
+            "Create": "Propose a solution to enable sound transmission in a vacuum environment."
+        },
+        {
+            "Original Question": "Qu'est-ce que le principe de superposition pour les ondes mécaniques ? Illustrer par un exemple simple ce que cela signifie lorsque deux ondes se rencontrent.",
+            "Remember": "Define the principle of superposition for mechanical waves.",
+            "Understand": "Explain how the principle of superposition applies to the interaction of waves.",
+            "Apply": "How would you demonstrate the principle of superposition using two simple wave patterns?",
+            "Analyze": "Analyze the interference patterns that result from the superposition of waves with different amplitudes.",
+            "Evaluate": "Evaluate the importance of the principle of superposition in wave interference phenomena.",
+            "Create": "Create a scenario where the principle of superposition can be observed in a real-life wave interaction."
+        },
+        {
+            "Original Question": "En utilisant la relation V=dΔtV=Δtd​, calculez la célérité d’une onde si la distance parcourue est de 340 mètres et le temps pris est de 1 seconde.",
+            "Remember": "Recall the formula V=dΔtV=Δtd​ used to calculate wave speed.",
+            "Understand": "Explain how to calculate wave speed using the given formula and values.",
+            "Apply": "Calculate the speed of a wave given a distance of 340 meters and a time of 1 second.",
+            "Analyze": "Analyze the implications of different distances and times on wave speed calculations.",
+            "Evaluate": "Evaluate the accuracy of the calculated wave speed in relation to real-world wave phenomena.",
+            "Create": "Devise a scenario where measuring wave speed is crucial for a specific application."
+        }
+    ]
+}

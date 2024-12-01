@@ -1,0 +1,172 @@
+{
+    "Bloom Taxonomy": {
+        "Remember": [
+            {
+                "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+                "Sub-Question": {
+                    "Question": "What is the definition of a mechanical wave?",
+                    "Answer": "A mechanical wave is a disturbance that propagates through a material medium (solid, liquid, or gas) due to the oscillation of particles within the medium, transferring energy from one location to another without transporting matter.\n",
+                    "score": 5
+                }
+            },
+            {
+                "Original Question": "Comment la vitesse de propagation d'une onde est-elle définie dans un milieu ? Utilisez la formule donnée dans vos notes.",
+                "Sub-Question": {
+                    "Question": "Recall the formula used to define the speed of wave propagation in a medium.",
+                    "Answer": "",
+                    "score": 0
+                }
+            },
+            {
+                "Original Question": "Si une onde sonore nécessite un milieu matériel pour se propager, pourquoi le son ne se propage-t-il pas dans le vide ?",
+                "Sub-Question": {
+                    "Question": "Explain why sound waves cannot propagate in a vacuum.",
+                    "Answer": "",
+                    "score": 0
+                }
+            },
+            {
+                "Original Question": "Qu'est-ce que le principe de superposition pour les ondes mécaniques ? Illustrer par un exemple simple ce que cela signifie lorsque deux ondes se rencontrent.",
+                "Sub-Question": {
+                    "Question": "Define the principle of superposition for mechanical waves.",
+                    "Answer": "",
+                    "score": 0
+                }
+            },
+            {
+                "Original Question": "En utilisant la relation V=dΔtV=Δtd​, calculez la célérité d’une onde si la distance parcourue est de 340 mètres et le temps pris est de 1 seconde.",
+                "Sub-Question": {
+                    "Question": "Recall the formula V=dΔtV=Δtd​ used to calculate wave speed.",
+                    "Answer": "",
+                    "score": 0
+                }
+            }
+        ],
+        "Understand": [
+            {
+                "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+                "Sub-Question": {
+                    "Question": "Explain the concept of a mechanical wave in your own words.",
+                    "Answer": "A mechanical wave occurs when particles in a medium vibrate and pass on their energy to neighboring particles. This creates a ripple effect where the disturbance moves through the medium, like ripples spreading out when you throw a stone into water.\n",
+                    "score": 5
+                }
+            },
+            {
+                "Original Question": "Comment la vitesse de propagation d'une onde est-elle définie dans un milieu ? Utilisez la formule donnée dans vos notes.",
+                "Sub-Question": {
+                    "Question": "How would you calculate the speed of a wave if given the distance traveled and the time taken?",
+                    "Answer": "",
+                    "score": 0
+                }
+            },
+            {
+                "Original Question": "Si une onde sonore nécessite un milieu matériel pour se propager, pourquoi le son ne se propage-t-il pas dans le vide ?",
+                "Sub-Question": {
+                    "Question": "Describe the role of a material medium in the transmission of sound waves.",
+                    "Answer": "",
+                    "score": 0
+                }
+            },
+            {
+                "Original Question": "Qu'est-ce que le principe de superposition pour les ondes mécaniques ? Illustrer par un exemple simple ce que cela signifie lorsque deux ondes se rencontrent.",
+                "Sub-Question": {
+                    "Question": "Explain how the principle of superposition applies to the interaction of waves.",
+                    "Answer": "",
+                    "score": 0
+                }
+            },
+            {
+                "Original Question": "En utilisant la relation V=dΔtV=Δtd​, calculez la célérité d’une onde si la distance parcourue est de 340 mètres et le temps pris est de 1 seconde.",
+                "Sub-Question": {
+                    "Question": "Explain how to calculate wave speed using the given formula and values.",
+                    "Answer": "",
+                    "score": 0
+                }
+            }
+        ],
+        "Analyze": [
+            {
+                "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+                "Sub-Question": {
+                    "Question": "Compare and contrast mechanical waves with electromagnetic waves.",
+                    "Answer": "",
+                    "score": 0
+                }
+            },
+            {
+                "Original Question": "Comment la vitesse de propagation d'une onde est-elle définie dans un milieu ? Utilisez la formule donnée dans vos notes.",
+                "Sub-Question": {
+                    "Question": "Break down the factors that can affect the speed of wave propagation in different mediums.",
+                    "Answer": "",
+                    "score": 0
+                }
+            },
+            {
+                "Original Question": "Si une onde sonore nécessite un milieu matériel pour se propager, pourquoi le son ne se propage-t-il pas dans le vide ?",
+                "Sub-Question": {
+                    "Question": "Analyze the differences in wave behavior between sound waves in a medium and in a vacuum.",
+                    "Answer": "",
+                    "score": 0
+                }
+            },
+            {
+                "Original Question": "Qu'est-ce que le principe de superposition pour les ondes mécaniques ? Illustrer par un exemple simple ce que cela signifie lorsque deux ondes se rencontrent.",
+                "Sub-Question": {
+                    "Question": "Analyze the interference patterns that result from the superposition of waves with different amplitudes.",
+                    "Answer": "",
+                    "score": 0
+                }
+            },
+            {
+                "Original Question": "En utilisant la relation V=dΔtV=Δtd​, calculez la célérité d’une onde si la distance parcourue est de 340 mètres et le temps pris est de 1 seconde.",
+                "Sub-Question": {
+                    "Question": "Analyze the implications of different distances and times on wave speed calculations.",
+                    "Answer": "",
+                    "score": 0
+                }
+            }
+        ],
+        "Evaluate": [
+            {
+                "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+                "Sub-Question": {
+                    "Question": "Judge the importance of understanding mechanical waves in various fields of science and technology.",
+                    "Answer": "",
+                    "score": 0
+                }
+            },
+            {
+                "Original Question": "Comment la vitesse de propagation d'une onde est-elle définie dans un milieu ? Utilisez la formule donnée dans vos notes.",
+                "Sub-Question": {
+                    "Question": "Assess the significance of understanding wave speed in the design of communication systems.",
+                    "Answer": "",
+                    "score": 0
+                }
+            },
+            {
+                "Original Question": "Si une onde sonore nécessite un milieu matériel pour se propager, pourquoi le son ne se propage-t-il pas dans le vide ?",
+                "Sub-Question": {
+                    "Question": "Evaluate the implications of sound wave behavior in different environments on human communication.",
+                    "Answer": "",
+                    "score": 0
+                }
+            },
+            {
+                "Original Question": "Qu'est-ce que le principe de superposition pour les ondes mécaniques ? Illustrer par un exemple simple ce que cela signifie lorsque deux ondes se rencontrent.",
+                "Sub-Question": {
+                    "Question": "Evaluate the importance of the principle of superposition in wave interference phenomena.",
+                    "Answer": "",
+                    "score": 0
+                }
+            },
+            {
+                "Original Question": "En utilisant la relation V=dΔtV=Δtd​, calculez la célérité d’une onde si la distance parcourue est de 340 mètres et le temps pris est de 1 seconde.",
+                "Sub-Question": {
+                    "Question": "Evaluate the accuracy of the calculated wave speed in relation to real-world wave phenomena.",
+                    "Answer": "",
+                    "score": 0
+                }
+            }
+        ]
+    }
+}

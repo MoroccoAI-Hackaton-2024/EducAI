@@ -1,0 +1,184 @@
+{
+    "Bloom Taxonomy": {
+        "Remember": [
+            {
+                "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+                "Sub-Question": {
+                    "Question": "What is the definition of a mechanical wave?",
+                    "Answer": "A mechanical wave is a disturbance that propagates through a material medium (solid, liquid, or gas) due to the oscillation of particles within the medium, transferring energy from one location to another without transporting matter.\n"
+                }
+            },
+            {
+                "Original Question": "Expliquez la différence entre une onde transversale et une onde longitudinale avec un exemple pour chacune.",
+                "Sub-Question": {
+                    "Question": "List the differences between a transverse wave and a longitudinal wave.",
+                    "Answer": ""
+                }
+            },
+            {
+                "Original Question": "Comment la vitesse de propagation d'une onde est-elle définie dans un milieu ? Utilisez la formule donnée dans vos notes.",
+                "Sub-Question": {
+                    "Question": "Recall the formula used to define the propagation speed of a wave in a medium.",
+                    "Answer": ""
+                }
+            },
+            {
+                "Original Question": "Quel effet l’élasticité d’un milieu a-t-elle sur la vitesse de propagation d’une onde ? Donnez un exemple.",
+                "Sub-Question": {
+                    "Question": "State the effect of a medium's elasticity on wave propagation speed.",
+                    "Answer": ""
+                }
+            }
+        ],
+        "Understand": [
+            {
+                "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+                "Sub-Question": {
+                    "Question": "Explain the concept of a mechanical wave in your own words.",
+                    "Answer": "A mechanical wave occurs when particles in a medium vibrate and pass on their energy to neighboring particles. This creates a ripple effect where the disturbance moves through the medium, like ripples spreading out when you throw a stone into water.\n"
+                }
+            },
+            {
+                "Original Question": "Expliquez la différence entre une onde transversale et une onde longitudinale avec un exemple pour chacune.",
+                "Sub-Question": {
+                    "Question": "Describe the characteristics of transverse and longitudinal waves and provide examples.",
+                    "Answer": ""
+                }
+            },
+            {
+                "Original Question": "Comment la vitesse de propagation d'une onde est-elle définie dans un milieu ? Utilisez la formule donnée dans vos notes.",
+                "Sub-Question": {
+                    "Question": "Explain the relationship between wave propagation speed and the properties of the medium.",
+                    "Answer": ""
+                }
+            },
+            {
+                "Original Question": "Quel effet l’élasticité d’un milieu a-t-elle sur la vitesse de propagation d’une onde ? Donnez un exemple.",
+                "Sub-Question": {
+                    "Question": "Explain how the elasticity of a medium influences the speed of wave propagation.",
+                    "Answer": ""
+                }
+            }
+        ],
+        "Apply": [
+            {
+                "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+                "Sub-Question": {
+                    "Question": "How would you identify a mechanical wave in a given scenario?",
+                    "Answer": ""
+                }
+            },
+            {
+                "Original Question": "Expliquez la différence entre une onde transversale et une onde longitudinale avec un exemple pour chacune.",
+                "Sub-Question": {
+                    "Question": "How would you classify a given wave as transverse or longitudinal?",
+                    "Answer": ""
+                }
+            },
+            {
+                "Original Question": "Comment la vitesse de propagation d'une onde est-elle définie dans un milieu ? Utilisez la formule donnée dans vos notes.",
+                "Sub-Question": {
+                    "Question": "Calculate the propagation speed of a wave in a specific medium using the formula.",
+                    "Answer": ""
+                }
+            },
+            {
+                "Original Question": "Quel effet l’élasticité d’un milieu a-t-elle sur la vitesse de propagation d’une onde ? Donnez un exemple.",
+                "Sub-Question": {
+                    "Question": "How would you test the impact of different elasticities on wave propagation speeds?",
+                    "Answer": ""
+                }
+            }
+        ],
+        "Analyze": [
+            {
+                "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+                "Sub-Question": {
+                    "Question": "Break down the components of a mechanical wave and its characteristics.",
+                    "Answer": ""
+                }
+            },
+            {
+                "Original Question": "Expliquez la différence entre une onde transversale et une onde longitudinale avec un exemple pour chacune.",
+                "Sub-Question": {
+                    "Question": "Examine the behavior of particles in transverse and longitudinal waves.",
+                    "Answer": ""
+                }
+            },
+            {
+                "Original Question": "Comment la vitesse de propagation d'une onde est-elle définie dans un milieu ? Utilisez la formule donnée dans vos notes.",
+                "Sub-Question": {
+                    "Question": "Investigate how different medium properties affect the propagation speed of waves.",
+                    "Answer": ""
+                }
+            },
+            {
+                "Original Question": "Quel effet l’élasticité d’un milieu a-t-elle sur la vitesse de propagation d’une onde ? Donnez un exemple.",
+                "Sub-Question": {
+                    "Question": "Analyze the relationship between medium elasticity and wave speed through experiments.",
+                    "Answer": ""
+                }
+            }
+        ],
+        "Evaluate": [
+            {
+                "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+                "Sub-Question": {
+                    "Question": "Judge the significance of mechanical waves in various applications.",
+                    "Answer": ""
+                }
+            },
+            {
+                "Original Question": "Expliquez la différence entre une onde transversale et une onde longitudinale avec un exemple pour chacune.",
+                "Sub-Question": {
+                    "Question": "Assess the advantages and disadvantages of transverse and longitudinal waves in practical situations.",
+                    "Answer": ""
+                }
+            },
+            {
+                "Original Question": "Comment la vitesse de propagation d'une onde est-elle définie dans un milieu ? Utilisez la formule donnée dans vos notes.",
+                "Sub-Question": {
+                    "Question": "Judge the efficiency of the formula in predicting wave propagation speeds in various media.",
+                    "Answer": ""
+                }
+            },
+            {
+                "Original Question": "Quel effet l’élasticité d’un milieu a-t-elle sur la vitesse de propagation d’une onde ? Donnez un exemple.",
+                "Sub-Question": {
+                    "Question": "Evaluate the importance of considering medium elasticity in wave transmission applications.",
+                    "Answer": ""
+                }
+            }
+        ],
+        "Create": [
+            {
+                "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+                "Sub-Question": {
+                    "Question": "Develop a model to demonstrate the propagation of a mechanical wave.",
+                    "Answer": ""
+                }
+            },
+            {
+                "Original Question": "Expliquez la différence entre une onde transversale et une onde longitudinale avec un exemple pour chacune.",
+                "Sub-Question": {
+                    "Question": "Design a scenario where both transverse and longitudinal waves interact with each other.",
+                    "Answer": ""
+                }
+            },
+            {
+                "Original Question": "Comment la vitesse de propagation d'une onde est-elle définie dans un milieu ? Utilisez la formule donnée dans vos notes.",
+                "Sub-Question": {
+                    "Question": "Devise an experiment to measure the propagation speed of a wave in different mediums.",
+                    "Answer": ""
+                }
+            },
+            {
+                "Original Question": "Quel effet l’élasticité d’un milieu a-t-elle sur la vitesse de propagation d’une onde ? Donnez un exemple.",
+                "Sub-Question": {
+                    "Question": "Propose a new material with specific elasticity properties to optimize wave propagation speeds.",
+                    "Answer": ""
+                }
+            }
+        ]
+    }
+}
