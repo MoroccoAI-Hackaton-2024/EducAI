@@ -1,0 +1,62 @@
+{
+    "Topic Questions": [
+        {
+            "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+            "Sub-Questions": {
+                "Remember": {
+                    "Question": "What is the definition of a mechanical wave?",
+                    "Answer": ""
+                },
+                "Understand": {
+                    "Question": "Explain the characteristics of mechanical waves.",
+                    "Answer": "fdfgdf"
+                },
+                "Apply": {
+                    "Question": "How can mechanical waves be identified in different mediums?",
+                    "Answer": "gdfgdfg"
+                },
+                "Analyze": {
+                    "Question": "Compare the properties of mechanical waves in solids and liquids.",
+                    "Answer": "dfgdfg"
+                },
+                "Evaluate": {
+                    "Question": "Evaluate the importance of understanding mechanical waves in engineering applications.",
+                    "Answer": "dfgdfg"
+                },
+                "Create": {
+                    "Question": "Design an experiment to demonstrate the propagation of a mechanical wave.",
+                    "Answer": "dfgdfg"
+                }
+            }
+        },
+        {
+            "Original Question": "Expliquez la différence entre une onde transversale et une onde longitudinale avec un exemple pour chacune.",
+            "Sub-Questions": {
+                "Remember": {
+                    "Question": "List the characteristics of transverse and longitudinal waves.",
+                    "Answer": "dfgdfg"
+                },
+                "Understand": {
+                    "Question": "Explain how transverse and longitudinal waves propagate differently.",
+                    "Answer": "dfgdfg"
+                },
+                "Apply": {
+                    "Question": "How would you classify a given wave as transverse or longitudinal?",
+                    "Answer": "dfgdfg"
+                },
+                "Analyze": {
+                    "Question": "Analyze the motion of particles in transverse and longitudinal waves.",
+                    "Answer": "dfgdfg"
+                },
+                "Evaluate": {
+                    "Question": "Evaluate the efficiency of communication using transverse and longitudinal waves.",
+                    "Answer": ""
+                },
+                "Create": {
+                    "Question": "Create a diagram illustrating the difference between transverse and longitudinal waves.",
+                    "Answer": "dfgdfg"
+                }
+            }
+        }
+    ]
+}

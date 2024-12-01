@@ -1,0 +1,100 @@
+{
+    "Bloom Taxonomy": {
+        "Remember": [
+            {
+                "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+                "Sub-Question": {
+                    "Question": "What is the definition of a mechanical wave?",
+                    "Answer": "A mechanical wave is a disturbance that propagates through a material medium (solid, liquid, or gas) due to the oscillation of particles within the medium, transferring energy from one location to another without transporting matter.\n"
+                }
+            },
+            {
+                "Original Question": "Comment la vitesse de propagation d'une onde est-elle définie dans un milieu ? Utilisez la formule donnée dans vos notes.",
+                "Sub-Question": {
+                    "Question": "Recall the formula used to define the propagation speed of a wave in a medium.",
+                    "Answer": ""
+                }
+            }
+        ],
+        "Understand": [
+            {
+                "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+                "Sub-Question": {
+                    "Question": "Explain the concept of a mechanical wave in your own words.",
+                    "Answer": "A mechanical wave occurs when particles in a medium vibrate and pass on their energy to neighboring particles. This creates a ripple effect where the disturbance moves through the medium, like ripples spreading out when you throw a stone into water.\n"
+                }
+            },
+            {
+                "Original Question": "Comment la vitesse de propagation d'une onde est-elle définie dans un milieu ? Utilisez la formule donnée dans vos notes.",
+                "Sub-Question": {
+                    "Question": "Explain the relationship between wave propagation speed and the properties of the medium.",
+                    "Answer": ""
+                }
+            }
+        ],
+        "Apply": [
+            {
+                "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+                "Sub-Question": {
+                    "Question": "How would you identify a mechanical wave in a given scenario?",
+                    "Answer": ""
+                }
+            },
+            {
+                "Original Question": "Comment la vitesse de propagation d'une onde est-elle définie dans un milieu ? Utilisez la formule donnée dans vos notes.",
+                "Sub-Question": {
+                    "Question": "Calculate the propagation speed of a wave in a specific medium using the formula.",
+                    "Answer": ""
+                }
+            }
+        ],
+        "Analyze": [
+            {
+                "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+                "Sub-Question": {
+                    "Question": "Break down the components of a mechanical wave and its characteristics.",
+                    "Answer": "A mechanical wave involves a source of disturbance, particles of the medium, and the energy transferred. The source initiates the wave by causing particles to vibrate. These vibrating particles then transfer energy to adjacent particles through forces like tension or compression, allowing the wave to propagate through the medium.\n"
+                }
+            },
+            {
+                "Original Question": "Comment la vitesse de propagation d'une onde est-elle définie dans un milieu ? Utilisez la formule donnée dans vos notes.",
+                "Sub-Question": {
+                    "Question": "Examine how changes in the medium's properties affect the wave propagation speed.",
+                    "Answer": ""
+                }
+            }
+        ],
+        "Evaluate": [
+            {
+                "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+                "Sub-Question": {
+                    "Question": "Judge the importance of understanding mechanical waves in various fields.",
+                    "Answer": ""
+                }
+            },
+            {
+                "Original Question": "Comment la vitesse de propagation d'une onde est-elle définie dans un milieu ? Utilisez la formule donnée dans vos notes.",
+                "Sub-Question": {
+                    "Question": "Assess the significance of understanding wave propagation speed in different mediums.",
+                    "Answer": ""
+                }
+            }
+        ],
+        "Create": [
+            {
+                "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+                "Sub-Question": {
+                    "Question": "Develop a model to demonstrate the propagation of a mechanical wave.",
+                    "Answer": ""
+                }
+            },
+            {
+                "Original Question": "Comment la vitesse de propagation d'une onde est-elle définie dans un milieu ? Utilisez la formule donnée dans vos notes.",
+                "Sub-Question": {
+                    "Question": "Design an experiment to measure the propagation speed of a wave in various materials.",
+                    "Answer": ""
+                }
+            }
+        ]
+    }
+}

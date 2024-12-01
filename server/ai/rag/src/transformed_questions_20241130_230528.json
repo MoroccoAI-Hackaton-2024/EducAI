@@ -1,0 +1,31 @@
+{
+    "Topic Questions": [
+        {
+            "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+            "Remember": "What is the definition of a mechanical wave?",
+            "Understand": "Explain the concept of a mechanical wave in your own words.",
+            "Apply": "How would you identify a mechanical wave in a given scenario?",
+            "Analyze": "Break down the components of a mechanical wave and its characteristics.",
+            "Evaluate": "Judge the significance of mechanical waves in various applications.",
+            "Create": "Develop a model to demonstrate the propagation of a mechanical wave."
+        },
+        {
+            "Original Question": "Comment la vitesse de propagation d'une onde est-elle définie dans un milieu ? Utilisez la formule donnée dans vos notes.",
+            "Remember": "Recall the formula used to define the propagation speed of a wave in a medium.",
+            "Understand": "Explain the relationship between wave speed and medium properties based on the formula.",
+            "Apply": "Calculate the propagation speed of a wave in a specific medium using the formula.",
+            "Analyze": "Examine how changes in medium properties affect the speed of wave propagation.",
+            "Evaluate": "Assess the importance of understanding wave speed in different mediums.",
+            "Create": "Design an experiment to measure the propagation speed of a wave in various materials."
+        },
+        {
+            "Original Question": "Quel effet l’élasticité d’un milieu a-t-elle sur la vitesse de propagation d’une onde ? Donnez un exemple.",
+            "Remember": "State the effect of a medium's elasticity on wave propagation speed.",
+            "Understand": "Interpret how the elasticity of a medium influences the speed of wave propagation.",
+            "Apply": "How would you demonstrate the impact of medium elasticity on wave speed experimentally?",
+            "Analyze": "Analyze the relationship between medium elasticity and wave speed with examples.",
+            "Evaluate": "Evaluate the significance of medium elasticity in controlling wave behavior.",
+            "Create": "Propose a new material with specific elasticity properties to optimize wave transmission."
+        }
+    ]
+}

@@ -1,0 +1,58 @@
+{
+    "Topic Questions": [
+        {
+            "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+            "Remember": "What is the definition of a mechanical wave?",
+            "Understand": "Explain the concept of a mechanical wave in your own words.",
+            "Apply": "How would you identify a mechanical wave in a given scenario?",
+            "Analyze": "Break down the components of a mechanical wave and how they interact.",
+            "Evaluate": "Judge the effectiveness of using mechanical waves in various applications.",
+            "Create": "Develop a model to demonstrate the propagation of a mechanical wave."
+        },
+        {
+            "Original Question": "Comment la vitesse de propagation d'une onde est-elle définie dans un milieu ? Utilisez la formule donnée dans vos notes.",
+            "Remember": "Recall the formula used to define the speed of wave propagation in a medium.",
+            "Understand": "Explain the relationship between wave speed and medium properties.",
+            "Apply": "Calculate the speed of a wave given specific medium characteristics.",
+            "Analyze": "Examine how different medium properties affect wave propagation speeds.",
+            "Evaluate": "Assess the impact of medium elasticity on wave velocity.",
+            "Create": "Design an experiment to measure the speed of wave propagation in different mediums."
+        },
+        {
+            "Original Question": "Si une onde sonore nécessite un milieu matériel pour se propager, pourquoi le son ne se propage-t-il pas dans le vide ?",
+            "Remember": "Why does sound require a material medium to propagate?",
+            "Understand": "Explain the concept of sound waves and their dependence on a medium.",
+            "Apply": "How would you demonstrate the absence of sound propagation in a vacuum?",
+            "Analyze": "Investigate the properties of sound waves that prevent propagation in a vacuum.",
+            "Evaluate": "Judge the implications of sound wave behavior in different mediums.",
+            "Create": "Propose a solution to enable sound transmission in a vacuum environment."
+        },
+        {
+            "Original Question": "Qu'est-ce que le principe de superposition pour les ondes mécaniques ? Illustrer par un exemple simple ce que cela signifie lorsque deux ondes se rencontrent.",
+            "Remember": "Define the principle of superposition for mechanical waves.",
+            "Understand": "Explain how the principle of superposition applies to wave interactions.",
+            "Apply": "How would you apply the principle of superposition to analyze wave interference?",
+            "Analyze": "Break down the effects of superposition when waves meet and interact.",
+            "Evaluate": "Assess the importance of understanding superposition in wave phenomena.",
+            "Create": "Create a simulation showing the superposition of two mechanical waves."
+        },
+        {
+            "Original Question": "En utilisant la relation V=dΔtV=Δtd​, calculez la célérité d’une onde si la distance parcourue est de 340 mètres et le temps pris est de 1 seconde.",
+            "Remember": "Recall the formula V=dΔtV=Δtd​ used to calculate wave velocity.",
+            "Understand": "Explain how distance and time are related to wave velocity in the given formula.",
+            "Apply": "Calculate the velocity of a wave using the provided formula and values.",
+            "Analyze": "Analyze the factors influencing wave velocity calculations.",
+            "Evaluate": "Evaluate the accuracy of the calculated wave velocity in a real-world scenario.",
+            "Create": "Devise a scenario where measuring wave velocity is crucial for decision-making."
+        },
+        {
+            "Original Question": "Si le retard ττ est la différence de temps pour que l'onde atteigne deux points différents dans le milieu, comment calculeriez-vous le retard entre deux points situés à 170 mètres l'un de l'autre, si la vitesse de l'onde est de 340 m/s ?",
+            "Remember": "Define the concept of wave delay or retard in wave propagation.",
+            "Understand": "Explain how wave delay is calculated between two points in a medium.",
+            "Apply": "Calculate the delay between two points given the distance and wave speed.",
+            "Analyze": "Analyze the relationship between distance, wave speed, and wave delay.",
+            "Evaluate": "Evaluate the significance of wave delay in communication systems.",
+            "Create": "Design a system that compensates for wave delays in a communication network."
+        }
+    ]
+}

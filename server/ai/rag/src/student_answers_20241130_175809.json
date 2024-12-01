@@ -1,0 +1,100 @@
+{
+    "Bloom Taxonomy": {
+        "Remember": [
+            {
+                "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+                "Sub-Question": {
+                    "Question": "What is the definition of a mechanical wave?",
+                    "Answer": "qsfsdfq"
+                }
+            },
+            {
+                "Original Question": "Expliquez la différence entre une onde transversale et une onde longitudinale avec un exemple pour chacune.",
+                "Sub-Question": {
+                    "Question": "List the differences between a transverse wave and a longitudinal wave.",
+                    "Answer": "qsdfqsddf"
+                }
+            }
+        ],
+        "Understand": [
+            {
+                "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+                "Sub-Question": {
+                    "Question": "Explain the concept of a mechanical wave in your own words.",
+                    "Answer": "sdfqsdf"
+                }
+            },
+            {
+                "Original Question": "Expliquez la différence entre une onde transversale et une onde longitudinale avec un exemple pour chacune.",
+                "Sub-Question": {
+                    "Question": "Discuss why transverse waves and longitudinal waves behave differently.",
+                    "Answer": "qsdfsqdf"
+                }
+            }
+        ],
+        "Apply": [
+            {
+                "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+                "Sub-Question": {
+                    "Question": "How would you identify a mechanical wave in a given scenario?",
+                    "Answer": "qsdfqsdf"
+                }
+            },
+            {
+                "Original Question": "Expliquez la différence entre une onde transversale et une onde longitudinale avec un exemple pour chacune.",
+                "Sub-Question": {
+                    "Question": "How would you classify a given wave as transverse or longitudinal?",
+                    "Answer": "qsdfqsdf"
+                }
+            }
+        ],
+        "Analyze": [
+            {
+                "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+                "Sub-Question": {
+                    "Question": "Break down the components of a mechanical wave and their interactions.",
+                    "Answer": "qsdfqsdf"
+                }
+            },
+            {
+                "Original Question": "Expliquez la différence entre une onde transversale et une onde longitudinale avec un exemple pour chacune.",
+                "Sub-Question": {
+                    "Question": "Examine the motion of particles in transverse and longitudinal waves.",
+                    "Answer": "qdsfsqdf"
+                }
+            }
+        ],
+        "Evaluate": [
+            {
+                "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+                "Sub-Question": {
+                    "Question": "Judge the efficiency of different mediums in transmitting mechanical waves.",
+                    "Answer": "qsdfqsdf"
+                }
+            },
+            {
+                "Original Question": "Expliquez la différence entre une onde transversale et une onde longitudinale avec un exemple pour chacune.",
+                "Sub-Question": {
+                    "Question": "Assess the advantages and disadvantages of using transverse waves in communication systems.",
+                    "Answer": "qsdfqs"
+                }
+            }
+        ],
+        "Create": [
+            {
+                "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+                "Sub-Question": {
+                    "Question": "Develop a model to demonstrate the propagation of a mechanical wave.",
+                    "Answer": "qsdfqsdf"
+                }
+            },
+            {
+                "Original Question": "Expliquez la différence entre une onde transversale et une onde longitudinale avec un exemple pour chacune.",
+                "Sub-Question": {
+                    "Question": "Design a presentation illustrating the characteristics of transverse and longitudinal waves.",
+                    "Answer": "qsdfqsdfq"
+                }
+            }
+        ]
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "Topic Questions": [
+        {
+            "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+            "Remember": "What is the definition of a mechanical wave?",
+            "Understand": "Explain the concept of a mechanical wave in your own words.",
+            "Apply": "How would you identify a mechanical wave in a given scenario?",
+            "Analyze": "Break down the components of a mechanical wave and how they interact.",
+            "Evaluate": "Judge the importance of understanding mechanical waves in various fields.",
+            "Create": "Develop a model to demonstrate the propagation of a mechanical wave."
+        },
+        {
+            "Original Question": "Comment la vitesse de propagation d'une onde est-elle définie dans un milieu ? Utilisez la formule donnée dans vos notes.",
+            "Remember": "Recall the formula used to define the propagation speed of a wave in a medium.",
+            "Understand": "Explain the relationship between wave propagation speed and the properties of the medium.",
+            "Apply": "Calculate the propagation speed of a wave in a specific medium using the formula.",
+            "Analyze": "Examine how changes in the medium's properties affect the wave propagation speed.",
+            "Evaluate": "Assess the significance of understanding wave propagation speed in different mediums.",
+            "Create": "Design an experiment to measure the propagation speed of a wave in various materials."
+        }
+    ]
+}

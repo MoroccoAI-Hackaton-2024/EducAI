@@ -1,0 +1,49 @@
+{
+    "Topic Questions": [
+        {
+            "Original Question": "Qu'est-ce qu'une onde mécanique ? Donnez une définition concise.",
+            "Remember": "What is the definition of a mechanical wave?",
+            "Understand": "Explain the concept of a mechanical wave in your own words.",
+            "Apply": "How would you identify a mechanical wave in a given scenario?",
+            "Analyze": "Break down the components of a mechanical wave and how they interact.",
+            "Evaluate": "Judge the significance of mechanical waves in various practical applications.",
+            "Create": "Develop a model to demonstrate the propagation of a mechanical wave."
+        },
+        {
+            "Original Question": "Comment la vitesse de propagation d'une onde est-elle définie dans un milieu ? Utilisez la formule donnée dans vos notes.",
+            "Remember": "Recall the formula used to define the speed of wave propagation in a medium.",
+            "Understand": "Explain the relationship between wave speed and medium properties based on the formula.",
+            "Apply": "Calculate the speed of a wave in a specific medium using the given formula.",
+            "Analyze": "Examine how different medium properties affect wave propagation speeds.",
+            "Evaluate": "Assess the impact of medium elasticity on wave speed in practical situations.",
+            "Create": "Design an experiment to investigate the effect of different mediums on wave speed."
+        },
+        {
+            "Original Question": "Si une onde sonore nécessite un milieu matériel pour se propager, pourquoi le son ne se propage-t-il pas dans le vide ?",
+            "Remember": "Explain why sound waves cannot propagate in a vacuum.",
+            "Understand": "Describe the role of a material medium in the transmission of sound waves.",
+            "Apply": "How would you demonstrate the inability of sound to travel through a vacuum?",
+            "Analyze": "Investigate the properties of sound waves and their interaction with different mediums.",
+            "Evaluate": "Judge the importance of a material medium for sound transmission in everyday life.",
+            "Create": "Propose a solution for transmitting sound in space where there is no material medium."
+        },
+        {
+            "Original Question": "Qu'est-ce que le principe de superposition pour les ondes mécaniques ? Illustrer par un exemple simple ce que cela signifie lorsque deux ondes se rencontrent.",
+            "Remember": "Define the principle of superposition for mechanical waves.",
+            "Understand": "Explain how the principle of superposition applies to the interaction of waves.",
+            "Apply": "How would you apply the principle of superposition to analyze wave interference?",
+            "Analyze": "Break down the concept of wave interference using the principle of superposition.",
+            "Evaluate": "Assess the implications of wave interference in practical wave-based systems.",
+            "Create": "Design an experiment to demonstrate the superposition of mechanical waves."
+        },
+        {
+            "Original Question": "En utilisant la relation V=dΔtV=Δtd​, calculez la célérité d’une onde si la distance parcourue est de 340 mètres et le temps pris est de 1 seconde.",
+            "Remember": "Recall the formula V=dΔtV=Δtd​ used to calculate wave speed.",
+            "Understand": "Explain how distance and time are related to wave speed in the given formula.",
+            "Apply": "Calculate the speed of a wave using the provided distance and time values.",
+            "Analyze": "Analyze the factors influencing wave speed calculation in different scenarios.",
+            "Evaluate": "Evaluate the accuracy of wave speed calculations in real-world applications.",
+            "Create": "Devise a scenario where measuring wave speed is crucial for a specific outcome."
+        }
+    ]
+}
